@@ -176,12 +176,25 @@ header {
     position:relative;
     padding-top:250px;
     margin:0;
+    
+    @media @mobile {
+      padding-top:180px;
+    }
+    @media @mobile-sm {
+      padding-top:120px;
+      -webkit-transform: scale(0.6,0.6);
+    }
   }
   
   small {
     font-size:30px;
     position:relative;
     letter-spacing:0.04em;
+    display:block;
+    @media @mobile-sm {
+      -webkit-transform: scale(0.9,0.9);
+      top:-35px;
+    }
   }
   
   position:relative;
@@ -196,7 +209,12 @@ nav {
     text-align:center;
     display:block;
     
+    
+    
     a {
+      @media @mobile-sm {
+        -webkit-transform: scale(0.8,0.8);
+      }
       background:url(../img/label_logos.png) no-repeat;
       background-size:cover;
       width:110px;
@@ -286,6 +304,17 @@ footer {
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  
+  body {
+    position: fixed;
+    top: 0; bottom: 0;
+    left:0;
+  }
+  
+  section.main {
+    width: auto;
+  }
+  
 
 }
 
