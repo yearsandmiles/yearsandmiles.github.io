@@ -1,0 +1,303 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@import "bootstrapmin";
+
+@font-face {
+    font-family: 'maridavid_bold';
+    src: url('../fonts/maridavid_bold-fontface.eot');
+    src: url('../fonts/maridavid_bold-fontface.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/maridavid_bold-fontface.woff2') format('woff2'),
+         url('../fonts/maridavid_bold-fontface.woff') format('woff'),
+         url('../fonts/maridavid_bold-fontface.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'maridavid_regular';
+    src: url('../fonts/maridavid-fontface.eot');
+    src: url('../fonts/maridavid-fontface.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/maridavid-fontface.woff2') format('woff2'),
+         url('../fonts/maridavid-fontface.woff') format('woff'),
+         url('../fonts/maridavid-fontface.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// MOBILE
+// --------------------------------------------------
+// These are super cool "selector variables" that help for REPSONSIVE
+
+// These are bootstrap indications **** WORK ON MERGING THESE!!!
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
+
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 529px)";
+@mobile-sm:   ~"only screen and (max-width: 320px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop-sm:  ~"only screen and (min-width: 768px) and (max-width: 994px)";
+@desktop:     ~"only screen and (min-width: 950px) and (max-width: 1199px)";
+@desktop-xl:  ~"only screen and (min-width: 1200px)";
+
+
+
+
+@yamyellow:     #ffe600;
+@grass:         #b3bc00;
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+//@seafoam-light:  lighten(@seafoam, 40%);
+//@seafoam-dark:  darken(@seafoam, 10%);
+html {
+   height: 100%;
+   margin: 0;
+   padding:0;
+}
+
+body {
+  min-height: 100%;
+  font-family: 'maridavid_regular', sans;
+  width: 100%;
+  margin: 0;
+  padding:0;
+  
+  color: black;
+  text-transform:uppercase;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#009dde+0,61b7ce+59,8dccb8+100 */
+  background: #009dde; /* Old browsers */
+  background: -moz-linear-gradient(top, #009dde 0%, #61b7ce 59%, #8dccb8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#009dde), color-stop(59%,#61b7ce), color-stop(100%,#8dccb8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #009dde 0%,#61b7ce 59%,#8dccb8 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #009dde 0%,#61b7ce 59%,#8dccb8 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #009dde 0%,#61b7ce 59%,#8dccb8 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #009dde 0%,#61b7ce 59%,#8dccb8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009dde', endColorstr='#8dccb8',GradientType=0 ); /* IE6-9 */
+  
+  
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size:12px;
+    font-weight:lighter;
+}
+
+
+.uppercase {
+  text-transform:uppercase;
+}
+
+.negative-text-indent {
+  text-indent:-99999em;
+}
+
+a {
+  text-decoration:underline;
+  color: black;
+  &:hover{
+    color:@yamyellow;
+  }
+}
+
+
+.page-wrapper {
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+       -o-animation: fadein 2s; /* Opera < 12.1 */
+          animation: fadein 2s;
+}
+
+section.main {
+  width: 720px;
+  margin: 0 auto;
+}
+
+header {
+  .logo {
+    position:absolute;
+    top: 10px;
+    display:block;
+    img {
+      width:720px; // bad fix for firefox, must find smething better.
+    }
+  }
+  
+  h1 {
+    font-size:110px;
+    line-height:60px;
+    letter-spacing:0.04em;
+    color:@yamyellow;
+    position:relative;
+    padding-top:250px;
+    margin:0;
+  }
+  
+  small {
+    font-size:30px;
+    position:relative;
+    letter-spacing:0.04em;
+  }
+  
+  position:relative;
+  width: 100%;
+  text-align:center
+}
+
+nav {
+  &.labels {
+    margin:20px auto;
+    padding-left:30px;
+    text-align:center;
+    display:block;
+    
+    a {
+      background:url(../img/label_logos.png) no-repeat;
+      background-size:cover;
+      width:110px;
+      height:60px;
+      .negative-text-indent;
+      display:inline-block;
+      margin: 0 2px;
+      
+      &.nrr {
+        background-position: 0px 0px;
+      }
+      &.npr {
+        background-position: -100px 0px;
+      }
+      &.ddr {
+        background-position: -200px 0px;
+      }
+      &:hover {
+        opacity:0.75;
+      }
+    }
+  }
+  
+  &.social {
+    width:300px;
+    margin: 40px auto 0 auto;
+    text-align:center;
+    display:block;
+    position:relative;
+    font-size: 24px;
+    letter-spacing:0.04em;
+    
+    a {
+      text-decoration:none;
+      
+    }
+  }
+  
+}
+
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  
+  .wrapper {
+      background:url(../img/grass_bg.png) 0px 22px repeat-x;
+      padding-top:30px;
+      position:relative;
+      width:100%;
+      height:120px;
+  }
+  
+  .grass {
+    &.left {
+      width:50%;
+      height:100%;
+      margin:0;
+      background:url(../img/grass_lt.png) repeat-x;
+      position:absolute;
+      bottom:0px;
+      left:0;
+    }
+    &.center {
+      width:100%;
+      height:100%;
+      margin:0;
+      background:url(../img/grass_base.png) center top no-repeat;
+      position:absolute;
+      bottom:44px;
+    }
+    
+    &.right {
+      width:50%;
+      height:100%;
+      margin:0;
+      background:url(../img/grass_rt.png) repeat-x;
+      position:absolute;
+      bottom:0px;
+      right:0;
+    }
+  }
+  
+}
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
